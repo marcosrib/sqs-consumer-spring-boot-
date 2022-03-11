@@ -2,9 +2,9 @@
 
 apt-get install -y jq > /dev/null 2>&1
 
-sns_topic_arn=`awslocal sns create-topic --name topic-teste | jq -r '.TopicArn'`
+sns_topic_arn=`awslocal sns create-topic --name topic-consumer | jq -r '.TopicArn'`
 
-sqs_queue_names=('teste_queue')
+sqs_queue_names=('consumer-queue')
 
 for i in "${!sqs_queue_names[@]}"; do
  sns_subscriptions[i]=`awslocal sns subscribe --topic-arn $sns_topic_arn --protocol sqs \

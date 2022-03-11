@@ -14,13 +14,13 @@ import javax.annotation.PostConstruct;
 
 @Service
 public class AmazonSqsClient {
-    @Value("${aws.ur}")
+    @Value("${aws.url}")
     private String url;
     @Value("${aws.region}")
     private String region;
-    @Value("${aws.access-ke}")
+    @Value("${aws.access-key}")
     private String accessKey;
-    @Value("${aws.secret-ke}")
+    @Value("${aws.secret-key}")
     private String secretKey;
     private AmazonSQS client;
 
